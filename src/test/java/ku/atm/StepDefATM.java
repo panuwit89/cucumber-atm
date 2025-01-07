@@ -44,6 +44,11 @@ public class StepDefATM {
         assertFalse(validLogin);
     }
 
+    @When("I deposit {int} to my account")
+    public void i_deposit_to_my_account(int amount) {
+        atm.deposit(amount);
+    }
+
     @When("I withdraw {float} from ATM")
     public void i_withdraw_from_atm(double amount) throws NotEnoughBalanceException {
         atm.withdraw(amount);
